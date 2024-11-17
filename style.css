@@ -1,0 +1,196 @@
+* {
+	font-family: "Cairo", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+	"slnt" 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Title Styling */
+h1 {
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #4a4a4a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout Container */
+.main-container {
+    display: flex;
+	flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+/* Crossword Container */
+.crossword-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Crossword Grid */
+#crossword {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 2px;
+    justify-content: center;
+}
+
+/* Individual Grid Cells */
+.cell {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    direction: rtl;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.cell input:focus {
+    background-color: #ffffcc;
+    box-shadow: 0 0 5px #ffd700;
+    border-radius: 4px;
+}
+
+.cell.blocked {
+    background: #333;
+    border: none;
+}
+
+/* Number Indicators for Cells */
+.cell span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 0.6em;
+    color: #666;
+}
+
+.cell-id {
+	position: absolute;
+    top: 0;
+    left: 0;
+	pointer-events: none;
+}
+
+/* Clues Section */
+.clues {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    flex: 1;
+    max-width: 300px;
+    align-self: flex-start;
+}
+
+.clues h2 {
+    font-size: 1.5em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.clues ul {
+    list-style: none;
+    padding: 0;
+}
+
+.clues li {
+    margin: 5px 0;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+/* Button Styling */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #357abd;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    #crossword {
+        grid-template-columns: repeat(8, 35px);
+        grid-template-rows: repeat(8, 35px);
+    }
+
+    .cell {
+        width: 35px;
+        height: 35px;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    .clues {
+        max-width: 100%;
+        text-align: center;
+    }
+}

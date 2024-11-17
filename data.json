@@ -1,0 +1,24 @@
+{
+	"grid": [
+        [null, null, null, null,  "ع",  "ط",  "ا",  "ر",  "د", null],
+        [null, null, null, null, null, null,  "ل", null, null, null],
+        [null, null, null, null, null, null,  "ر", null, null, null],
+        [null, null, null, null,  "ة",  "م",  "ي", "ز",   "ه", null],
+        [ "م",  "غ",  "و",  "ا",  "ر", null,  "ا", null, null, null],
+        [null, null, null, null,  "ه", null,  "ح", null, null, null],
+        [null, null,  "س",  "م",  "ا",  "ء", null, null, null, null],
+        [null, null, null, null,  "ق", null, null, null, null, null],
+        [null, null, null, null,  "ل", null, null, null, null, null],
+        [null, null, null, null,  "ا", null, null, null, null, null],
+    ],
+    "across": [
+        { "number": 1, "clue": "أقرب كوكب إلى الشمس", "start": [0, 4], "length": 5 },
+        { "number": 3, "clue": "تعني شجاع", "start": [4, 0], "length": 5 },
+        { "number": 4, "clue": "فوقنا ولونه أزرق", "start": [6, 2], "length": 4 },
+        { "number": 6, "clue": "مضاد نصر معكوسة", "start": [3, 4], "length": 5 },
+    ],
+    "down": [
+        { "number": 2, "clue": "عاصمة مصر معكوسة", "start": [3, 4], "length": 7 },
+        { "number": 5, "clue": "من أهم مصادر الطاقة المتجددة", "start": [0, 6], "length": 6 },
+    ],
+}
