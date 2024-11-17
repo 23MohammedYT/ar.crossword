@@ -6,18 +6,8 @@ function loadCrosswordData(fileName) {
         .then((response) => response.json())
         .then((data) => {
             crosswordData = data;
-            initializeCrossword(); // Call the function to create the crossword
         })
         .catch((error) => console.error("Error loading crossword data:", error));
-}
-
-// Function to initialize the crossword
-function initializeCrossword() {
-    document.getElementById("crossword").innerHTML = ""; // Clear the grid
-    document.getElementById("across-clues").innerHTML = ""; // Clear across clues
-    document.getElementById("down-clues").innerHTML = ""; // Clear down clues
-    createCrossword(); // Generate the grid
-    createClues(); // Generate clues
 }
 
 // Call this function to load a specific crossword
