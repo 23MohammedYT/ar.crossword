@@ -27,9 +27,54 @@ function initializeCrossword() {
 // Load a random crossword on page load
 loadRandomCrosswordData();
 
+
+
+// Fullscreen toggle function
+function toggleFullscreen() {
+	const checkbox = document.getElementById('pill3');
+
+	if (checkbox.checked) {
+		fullscreenMode();		
+		localStorage.setItem('fullscreen', true);
+	} else {
+		cancelFullscreen();
+		localStorage.setItem('fullscreen', false);
+	}
+}
+
+function fullscreenMode() {
+	if (document.documentElement.requestFullscreen) {
+		document.documentElement.requestFullscreen();
+	} else if (document.documentElement.mozRequestFullScreen) { // Firefox
+		document.documentElement.mozRequestFullScreen();
+	} else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+		document.documentElement.webkitRequestFullscreen();
+	} else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+		document.documentElement.msRequestFullscreen();
+	}
+}
+
+function cancelFullscreen() {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.mozCancelFullScreen) { // Firefox
+		document.mozCancelFullScreen();
+	} else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+		document.webkitExitFullscreen();
+	} else if (document.msExitFullscreen) { // IE/Edge
+		document.msExitFullscreen();
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	if (localStorage.getItem('darkmode') === null) {
 		localStorage.setItem('darkmode', false);
+	} if (localStorage.getItem('fullscreen') === null) {
+		if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+			localStorage.setItem('fullscreen', true);
+		} else {
+			localStorage.setItem('fullscreen', false);
+		}
 	}
 	
 	// Check localStorage for dark mode preference on page load
@@ -41,8 +86,31 @@ document.addEventListener('DOMContentLoaded', () => {
         darkModeContent.textContent = "dark_mode";
 	}
 	
+	// Check localStorage for fullscreen preference on page load
+	if (localStorage.getItem('fullscreen') === 'true') {
+		document.getElementById('pill3').checked = true;
+	} else {
+		document.getElementById('pill3').checked = false
+	}
+	
 	updateScrollbarStyle();
 })
+
+// Event listener for F11 keypress
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'F11') {
+        event.preventDefault(); // Prevent default behavior of F11
+		if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+			cancelFullscreen();
+			document.getElementById('pill3').checked = false
+			localStorage.setItem('fullscreen', false);
+		} else {
+			fullscreenMode();
+			document.getElementById('pill3').checked = true;
+			localStorage.setItem('fullscreen', true);
+		}
+    }
+});
 
 // Generate crossword grid
 function createCrossword() {
@@ -117,9 +185,11 @@ function checkAnswers() {
 
         if (input.value !== crosswordData.grid[row][col]) {
             input.style.backgroundColor = "#f8d7da";
+            input.style.color = "#444";
             correct = false;
         } else {
             input.style.backgroundColor = "#d4edda";
+            input.style.color = "#444";
         }
     });
 
@@ -188,5 +258,40 @@ function updateScrollbarStyle() {
         }
     }
 }
+
+const moreButton = document.getElementById("more");
+const black_back = document.querySelector('#black-back');
+const about_menu = document.querySelector('.about-menu');
+const close_about = document.querySelector('.close-about');
+
+moreButton.addEventListener("click", () => {
+	black_back.style.display = 'block';
+	about_menu.style.top = '42%';
+})
+
+close_about.addEventListener("click", () => {
+	black_back.style.display = 'none';
+	about_menu.style.top = '150%';
+})
+
+const settingsButton = document.getElementById("settings");
+const settingsMenu = document.querySelector('.settings-menu');
+const close_settings = document.querySelector('.close-settings');
+
+settingsButton.addEventListener("click", () => {
+	black_back.style.display = 'block';
+	settingsMenu.style.top = '42%';
+})
+
+close_settings.addEventListener("click", () => {
+	black_back.style.display = 'none';
+	settingsMenu.style.top = '150%';
+})
+
+black_back.addEventListener("click", () => {
+	black_back.style.display = 'none';
+	about_menu.style.top = '150%';
+	settingsMenu.style.top = '150%';
+})
 
 document.getElementById("check-answers").addEventListener("click", checkAnswers);
