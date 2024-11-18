@@ -363,7 +363,7 @@ body.dark-mode #check-answers:hover {
 	display: none;
 }
 
-.closs-button {
+.close-button {
 	position: absolute;
 	top: 20px;
 	right: 20px;
