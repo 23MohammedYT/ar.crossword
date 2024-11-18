@@ -1,8 +1,15 @@
 let crosswordData;
 
-// Function to load crossword data
-function loadCrosswordData(fileName) {
-    fetch(fileName)
+// Function to load a random crossword data file
+function loadRandomCrosswordData() {
+    // List of available crossword data files
+    const files = ["data1.json", "data2.json", "data3.json"];
+
+    // Select a random file from the list
+    const randomFile = files[Math.floor(Math.random() * files.length)];
+
+    // Fetch the selected file
+    fetch(randomFile)
         .then((response) => response.json())
         .then((data) => {
             crosswordData = data;
@@ -17,8 +24,25 @@ function initializeCrossword() {
     createClues(); // Generate clues
 }
 
-// Call this function to load a specific crossword
-loadCrosswordData("data.json");
+// Load a random crossword on page load
+loadRandomCrosswordData();
+
+document.addEventListener('DOMContentLoaded', () => {
+	if (localStorage.getItem('darkmode') === null) {
+		localStorage.setItem('darkmode', false);
+	}
+	
+	// Check localStorage for dark mode preference on page load
+	if (localStorage.getItem('darkmode') === 'true') {
+		document.body.classList.add('dark-mode');
+        darkModeContent.textContent = "light_mode";
+	} else {
+		document.body.classList.remove('dark-mode');
+        darkModeContent.textContent = "dark_mode";
+	}
+	
+	updateScrollbarStyle();
+})
 
 // Generate crossword grid
 function createCrossword() {
@@ -103,6 +127,65 @@ function checkAnswers() {
         alert("تهانينا! كل الإجابات صحيحة!");
     } else {
         alert("هناك إجابات غير صحيحة، حاول مرة أخرى!");
+    }
+}
+
+// getting HTML elements
+const nav = document.querySelector("nav"),
+toggleBtn = nav.querySelector(".toggle-btn");
+
+toggleBtn.addEventListener("click" , () =>{
+	nav.classList.toggle("open");
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const darkModeContent = document.getElementById("dark-mode-toggle").querySelector("i");
+
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Toggle between dark_mode and light_mode icons
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeContent.textContent = "light_mode";
+		localStorage.setItem('darkmode', 'true');
+		updateScrollbarStyle();
+    } else {
+        darkModeContent.textContent = "dark_mode";
+		localStorage.setItem('darkmode', 'false');
+		updateScrollbarStyle();
+    }
+});
+
+function updateScrollbarStyle() {
+    const existingStyle = document.getElementById("dark-mode-scrollbar-style");
+
+    if (document.body.classList.contains("dark-mode")) {
+        // Add dark mode scrollbar styles if not already present
+        if (!existingStyle) {
+            const style = document.createElement("style");
+            style.id = "dark-mode-scrollbar-style";
+            style.textContent = `
+                ::-webkit-scrollbar-track { 
+                    background: #333333; /* Dark background for the track */
+                }
+                ::-webkit-scrollbar-thumb { 
+                    background: #888888; /* Lighter thumb for dark mode */
+                }
+                ::-webkit-scrollbar-thumb:hover { 
+                    background: #777777; /* Slightly darker on hover */
+                }
+                ::-webkit-scrollbar-thumb:active { 
+                    background: #666666; /* Even darker when clicked */
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    } else {
+        // Remove dark mode scrollbar styles if present
+        if (existingStyle) {
+            existingStyle.remove();
+        }
     }
 }
 
