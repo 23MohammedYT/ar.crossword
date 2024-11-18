@@ -9,6 +9,7 @@
 		<title>لعبة الكلمات المتقاطعة</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style-mobile.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -19,8 +20,86 @@
      crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<div id="overlay"></div>
+		<div class="main-menu mobile-only">
+			<div class="menu-header">
+				<h1>لعبة الكلمات المتقاطعة</h1>
+				<p>اختبر ذكاءك واستمتع بحل الألغاز مع لعبة الكلمات المتقاطعة</p>
+			</div>
+			<div class="menu-buttons">
+				<button id="start-game">ابدأ اللعبة</button>
+				<button id="settings-game">الإعدادات</button>
+				<button id="about">عن اللعبة</button>
+				<button id="exit">خروج</button>
+			</div>
+			<div class="menu-footer">
+				<p>© 2024 جميع الحقوق محفوظة | تصميم: 23MohammedYT</p>
+			</div>
+		</div>
+		
+		<div class="custom-settings-menu">
+			<h1>إعدادات الموقع</h1>
+			<div class="custom-setting-item">
+				<div class="custom-item">
+					<div class="custom-toggle-pill-color">
+						<input type="checkbox" id="custom-pill3" name="check" onclick="toggleDarkmode()" />
+						<label for="custom-pill3"></label>
+					</div>
+					<label for="fullscreen-toggle">الوضع الليلي</label>
+				</div>
+			</div>
+			<button class="close-custom-settings">إغلاق القائمة</button>
+		</div>
+		
+		<div class="custom-settings-menu">
+			<h1>إعدادات الموقع</h1>
+			<div class="custom-setting-item">
+				<div class="custom-item">
+					<div class="custom-toggle-pill-color">
+						<input type="checkbox" id="custom-pill3" name="check" onclick="toggleDarkmode()" />
+						<label for="custom-pill3"></label>
+					</div>
+					<label for="fullscreen-toggle">الوضع الليلي</label>
+				</div>
+			</div>
+			<button class="close-custom-settings">إغلاق القائمة</button>
+		</div>
+		
+		<div class="about-container">
+			<h1>عن الموقع</h1>
+			<p>
+				مرحبًا بكم في موقعنا المخصص لعشاق الألغاز وكلمات المتقاطعة! هدفنا الأساسي هو تقديم تجربة ممتعة وتعليمية
+				تثير التفكير وتوسع المعرفة. موقعنا يقدم مجموعة متنوعة من الألغاز المصممة بعناية لتناسب جميع المستويات،
+				من المبتدئين إلى المحترفين.
+			</p>
+			<p>
+				كلمات متقاطعة ليست مجرد لعبة، بل هي وسيلة رائعة لتحفيز العقل وتحسين الذاكرة، بالإضافة إلى أنها طريقة
+				ممتعة لتعلم كلمات ومصطلحات جديدة.
+			</p>
+			<p class="important-note">
+				ملحوظة: نظام اللعب من اليمين إلى اليسار. تراعى فيه القواعد العربية.
+			</p>
+			<div class="contact-group">
+				<div class="contact-section">
+					<h2>اتصل بنا</h2>
+					<a href="mailto:support@crosswordsite.com">البريد الإلكتروني: support@crosswordsite.com</a>
+					<a href="tel:+1234567890">الهاتف: +1234567890</a>
+					<a href="https://www.crosswordsite.com/contact">صفحة الاتصال</a>
+				</div>
+				<div class="important-links">
+					<h2>روابط مهمة</h2>
+					<a href="https://www.youtube.com/@23MohammedYT"><i class="fa-brands fa-youtube"></i> يوتيوب</a>
+					<a href="https://www.tiktok.com/@mohammedmonsef24"><i class="fa-brands fa-tiktok"></i> تيك توك</a>
+					<a href="https://www.facebook.com/profile.php?id=100088398382170"><i class="fa-brands fa-facebook"></i> فيس بوك</a>
+					<a href="https://x.com/23MohammedYT"><i class="fa-brands fa-x-twitter"></i> إكس</a>
+				</div>
+			</div>
+			<button class="close-custom-settings">إغلاق القائمة</button>
+		</div>
+
+	
 		<nav>
-			<div class="nav-content">
+			<div class="nav-content pc-only">
 				<div class="toggle-btn">
 					<i class='bx bx-plus'></i>
 				</div>
@@ -47,26 +126,37 @@
 			</div>
 		</div>
 	
-		<h1>لعبة الكلمات المتقاطعة</h1>
-		<div class="main-container">
-			<div class="crossword-container">
-				<div id="crossword"></div>
-				<button id="check-answers">تحقق من الإجابات</button>
+		
+		<div class="game-container">
+			<div class="game-title">
+				<span id="openMenu" onclick="gameMenu()" class="material-symbols-outlined mobile-only menu-icon">menu</span>
+				<h1 class="gameTitle pc-only">لعبة الكلمات المتقاطعة</h1>
 			</div>
-			<div class="clues">
-				<div>
-					<h2>الأفقي</h2>
-					<ul id="across-clues"></ul>
+			
+			<div class="main-container">
+				<div class="crossword-container">
+					<div id="crossword"></div>
+					<button id="check-answers">تحقق من الإجابات</button>
 				</div>
-				<div>
-					<h2>الرأسي</h2>
-					<ul id="down-clues"></ul>
+				<div class="clues">
+					<div>
+						<h2>الأفقي</h2>
+						<ul id="across-clues"></ul>
+					</div>
+					<div>
+						<h2>الرأسي</h2>
+						<ul id="down-clues"></ul>
+					</div>
+					<div class="cluesButtons mobile-only">
+						<button class="btn-close">إغلاق القائمة</button>
+						<button class="btn-exit">الخروج من اللعبة</button>	
+					</div>
 				</div>
 			</div>
 		</div>
 		<div id="black-back"></div>
 		<div class="settings-menu">
-			<button class="closs-button close-settings"><i class="fa-solid fa-xmark"></i></button>
+			<button class="close-button close-settings"><i class="fa-solid fa-xmark"></i></button>
 			<h1>إعدادات الموقع</h1>
 			<div class="setting-item">
 				<div class="item">
@@ -79,7 +169,7 @@
 			</div>
 		</div>
 		<div class="about-menu">
-			<button class="closs-button close-about"><i class="fa-solid fa-xmark"></i></button>
+			<button class="close-button close-about"><i class="fa-solid fa-xmark"></i></button>
 			<h1>عن الموقع</h1>
 			<p>
 				مرحبًا بكم في موقعنا المخصص لعشاق الألغاز وكلمات المتقاطعة! 
@@ -111,5 +201,6 @@
 			</div>
 		</div>
 		<script src="script.js"></script>
+		<script src="script-mobile.js"></script>
 	</body>
 </html>
