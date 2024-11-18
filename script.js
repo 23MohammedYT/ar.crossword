@@ -3,7 +3,7 @@ let crosswordData;
 // Function to load a random crossword data file
 function loadRandomCrosswordData() {
     // List of available crossword data files
-    const files = ["data1.json", "data2.json", "data3.json"];
+    const files = ["data1.json", "data2.json", "data3.json", "data4.json"];
 
     // Select a random file from the list
     const randomFile = files[Math.floor(Math.random() * files.length)];
@@ -81,9 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (localStorage.getItem('darkmode') === 'true') {
 		document.body.classList.add('dark-mode');
         darkModeContent.textContent = "light_mode";
+		document.getElementById('custom-pill3').checked = true;
 	} else {
 		document.body.classList.remove('dark-mode');
         darkModeContent.textContent = "dark_mode";
+		document.getElementById('custom-pill3').checked = false;
 	}
 	
 	// Check localStorage for fullscreen preference on page load
@@ -167,8 +169,7 @@ function createId(cell_id, position_x, position_y) {
 	label.classList.add("cell-id");
 	label.innerHTML = String(cell_id);
 	if (cell.querySelector('label') !== null) {
-		label.style.left = '100%';
-		label.style.right = '0px';
+		label.style.display = 'none';
 	}
 	cell.appendChild(label);	
 }
