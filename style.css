@@ -318,6 +318,10 @@ body.dark-mode .cell input {
     color: #f1f1f1;
 }
 
+body.dark-mode .cell input:focus {
+    color: #333;
+}
+
 body.dark-mode #check-answers {
     background-color: #555;
     color: #f1f1f1;
@@ -613,6 +617,122 @@ body.dark-mode .toggle-pill-color input[type="checkbox"]:checked + label:before 
 	transform: rotate(295deg);
 }
 /* toggle-pill-dark end */
+
+/* Overlay */
+.custom-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Confirm box */
+.custom-confirm-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+	display: none;
+}
+
+/* Title */
+.custom-confirm-box h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.custom-confirm-box p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Buttons container */
+.custom-confirm-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Buttons */
+.custom-confirm-buttons button {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-confirm-buttons button#confirmYes {
+    background: #28a745;
+    color: #fff;
+}
+
+.custom-confirm-buttons button#confirmYes:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+.custom-confirm-buttons button#confirmNo {
+    background: #dc3545;
+    color: #fff;
+}
+
+.custom-confirm-buttons button#confirmNo:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Dark mode styles for the overlay */
+body.dark-mode .custom-confirm-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dark mode styles for the confirmation box */
+body.dark-mode .custom-confirm-box {
+    background: #222;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .custom-confirm-box h2 {
+    color: #fff;
+}
+
+body.dark-mode .custom-confirm-box p {
+    color: #ccc;
+}
+
+/* Buttons in dark mode */
+body.dark-mode .custom-confirm-buttons button#confirmYes {
+    background: #28a745;
+    color: #fff;
+}
+
+body.dark-mode .custom-confirm-buttons button#confirmYes:hover {
+    background: #218838;
+}
+
+body.dark-mode .custom-confirm-buttons button#confirmNo {
+    background: #dc3545;
+    color: #fff;
+}
+
+body.dark-mode .custom-confirm-buttons button#confirmNo:hover {
+    background: #c82333;
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
