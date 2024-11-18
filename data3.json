@@ -7,18 +7,18 @@
 		[null, null, null,  "ن", null, null,  "س", null,  "ف", null],
 		[null, null, null,  "ا",  "ل",  "ه",  "ا",  "د",  "ي", null],
 		[null, null, null,  "و", null, null, null, null,  "ع", null],
-		[null, null,  "ل",  "ي",  "ه",  "ض", null, null,  "ض", null],
+		[null, null,  "ل",  "ي",  "ه",  "ص", null, null,  "ض", null],
 		[null, null, null, null, null, null, null, null, null, null],
 		[null, null, null, null, null, null, null, null, null, null]
     ],
     "across": [
-        { "number": 1, "clue": "الفائز بكأس العالم لعام 2018", "start": [1, 6], "length": 5 },
         { "number": 2, "clue": "أقوى عضلة في الجسم", "start": [1, 4], "length": 4 },
-        { "number": 3, "clue": "مضاد قوي معكوسة", "start": [4, 8], "length": 4 }
-    ],
-    "down": [
-        { "number": 4, "clue": "عملة صينية معكوسة", "start": [4, 3], "length": 4 },
         { "number": 5, "clue": "أكبر محيط في العالم", "start": [5, 3], "length": 6 },
         { "number": 6, "clue": "صوت الحصان معكوسة", "start": [7, 2], "length": 4 }
+    ],
+    "down": [
+        { "number": 1, "clue": "الفائز بكأس العالم لعام 2018", "start": [1, 6], "length": 5 },
+        { "number": 3, "clue": "مضاد قوي معكوسة", "start": [4, 8], "length": 4 },
+        { "number": 4, "clue": "عملة صينية معكوسة", "start": [4, 3], "length": 4 }
     ]
 }
