@@ -10,6 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+		<script src="https://kit.fontawesome.com/91f684aec9.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<nav>
@@ -21,10 +22,10 @@
 					<a id="dark-mode-toggle"><i class="material-symbols-outlined">dark_mode</i></a>
 				</span>
 				<span style="--i:2;">
-					<a><i id="settings" class="material-symbols-outlined">settings</i></a>
+					<a id="settings"><i class="material-symbols-outlined">settings</i></a>
 				</span>
 				<span style="--i:3;">
-					<a><i id="more" class="material-symbols-outlined">more_vert</i></a>
+					<a id="more"><i class="material-symbols-outlined">more_vert</i></a>
 				</span>
 			</div>
 		</nav>
@@ -43,6 +44,49 @@
 				<div>
 					<h2>الرأسي</h2>
 					<ul id="down-clues"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="black-back"></div>
+		<div class="settings-menu">
+			<button class="closs-button close-settings"><i class="fa-solid fa-xmark"></i></button>
+			<h1>إعدادات الموقع</h1>
+			<div class="setting-item">
+				<div class="item">
+					<div class="toggle-pill-color">
+						<input type="checkbox" id="pill3" name="check"  onclick="toggleFullscreen()" />
+						<label for="pill3"></label>
+					</div>
+					<label for="fullscreen-toggle">وضع الشاشة الكاملة</label>
+				</div>
+			</div>
+		</div>
+		<div class="about-menu">
+			<button class="closs-button close-about"><i class="fa-solid fa-xmark"></i></button>
+			<h1>عن الموقع</h1>
+			<p>
+				مرحبًا بكم في موقعنا المخصص لعشاق الألغاز وكلمات المتقاطعة! 
+				هدفنا الأساسي هو تقديم تجربة ممتعة وتعليمية تثير التفكير وتوسع المعرفة.
+				موقعنا يقدم مجموعة متنوعة من الألغاز المصممة بعناية لتناسب جميع المستويات، من المبتدئين إلى المحترفين.
+				كلمات متقاطعة ليست مجرد لعبة، بل هي وسيلة رائعة لتحفيز العقل وتحسين الذاكرة، بالإضافة إلى أنها طريقة ممتعة لتعلم كلمات ومصطلحات جديدة.
+			</p>
+			<p>
+				سواء كنت تبحث عن تحديات جديدة، أو ترغب في قضاء وقت ممتع مع الأصدقاء والعائلة، أو حتى تحب المنافسة، فإن موقعنا يوفر لك كل ما تحتاجه!
+				استمتع بحل الألغاز بمفردك أو تحدى الآخرين وشارك إنجازاتك.
+			</p>
+			<div class="contact-group">
+				<div class="contact-section">
+					<h2>اتصل بنا</h2>
+					<a href="mailto:support@crosswordsite.com">البريد الإلكتروني: support@crosswordsite.com</a>
+					<a href="tel:+1234567890">الهاتف: +1234567890</a>
+					<a href="https://www.crosswordsite.com/contact">صفحة الاتصال</a>
+				</div>
+				<div class="important-links">
+					<h2>روابط مهمة</h2>
+					<a href="https://www.crosswordsite.com"><i class="fa-brands fa-youtube"></i> يوتيوب</a>
+					<a href="https://www.crosswordsite.com/puzzles"><i class="fa-brands fa-tiktok"></i> تيك توك</a>
+					<a href="https://www.crosswordsite.com/faq"><i class="fa-brands fa-facebook"></i> فيس بوك</a>
+					<a href="https://www.crosswordsite.com/privacy-policy"><i class="fa-brands fa-x-twitter"></i> إكس</a>
 				</div>
 			</div>
 		</div>
