@@ -747,13 +747,13 @@ body.dark-mode .custom-confirm-buttons button#confirmNo:hover {
     }
 
     #crossword {
-        grid-template-columns: repeat(10, 35px);
-        grid-template-rows: repeat(10, 35px);
+        grid-template-columns: repeat(10, 30px);
+        grid-template-rows: repeat(10, 30px);
     }
 
     .cell {
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
     }
 
     #check-answers {
