@@ -1,0 +1,475 @@
+/* Main menu container */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Corrected from 100vw to 100vh */
+    pointer-events: none;
+    background-color: #000;
+    opacity: 0;
+    z-index: 10;
+    animation: none; /* Added 'forwards' to keep final opacity */
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #4b79a1, #283e51);
+    font-family: 'Cairo', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* Menu header */
+.menu-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu-header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+/* Menu buttons */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-buttons button {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    background: #f8a520;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menu-buttons button:hover {
+    background: #d48818;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.menu-buttons button:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.menu-footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.menu-footer p {
+    margin: 0;
+}
+
+.menu-footer p:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+body.dark-mode .main-menu {
+    background: linear-gradient(to bottom, #2c3e50, #4b79a1);
+}
+
+body.dark-mode .menu-header p {
+    color: #bbb;
+}
+
+body.dark-mode .menu-buttons button {
+    background: #555;
+    color: #fff;
+}
+
+body.dark-mode .menu-buttons button:hover {
+    background: #777;
+}
+
+body.dark-mode .menu-footer p {
+    color: #888;
+}
+
+body.dark-mode .menu-footer p:hover {
+    color: #fff;
+}
+
+.custom-settings-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 89vw;
+	height: 100vh;
+	background: linear-gradient(to bottom, #4b79a1, #283e51);
+    padding: 20px;
+	pointer-events: none;
+	opacity: 0;
+	animation: none;
+    transition: 0.5s;
+}
+
+body.dark-mode .custom-settings-menu {
+    background: #333;
+    color: #ddd;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.custom-settings-menu h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #0e2431;
+}
+
+body.dark-mode .custom-settings-menu h1 {
+    color: #fff;
+}
+
+.custom-setting-item {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    direction: ltr;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.custom-setting-item label {
+    margin-left: 10px;
+    color: #333;
+	font-weight: 600;
+    transition: color 0.3s;
+}
+
+body.dark-mode .custom-setting-item label {
+    color: #ddd;
+}
+
+.custom-setting-item .custom-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* custom-toggle-pill-color */
+.custom-toggle-pill-color input[type="checkbox"] {
+    display: none;
+}
+
+.custom-toggle-pill-color input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    width: 3em;
+    height: 1.6em;
+    margin-bottom: 20px;
+    border-radius: 1em;
+    background: #e84d4d;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.1s ease-in-out;
+}
+
+.custom-toggle-pill-color input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1em;
+    background: #fff;
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-toggle-pill-color input[type="checkbox"]:checked + label {
+    background: #47cf73;
+}
+
+.custom-toggle-pill-color input[type="checkbox"]:checked + label:before {
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    left: 1.6em;
+}
+
+/* Dark Mode */
+body.dark-mode .custom-toggle-pill-color input[type="checkbox"] + label {
+    background: #303e58;
+}
+
+body.dark-mode .custom-toggle-pill-color input[type="checkbox"]:checked + label {
+    background: #47cf73;
+}
+
+body.dark-mode .custom-toggle-pill-color input[type="checkbox"]:checked + label:before {
+    background: #fff;
+    left: 1.6em;
+}
+
+.close-custom-settings {
+	font-size: 1.2rem;
+    color: #fff;
+    background-color: #e84d4d; /* Red background */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	margin: 40px auto;
+}
+
+.close-menu-button:hover {
+    background-color: #f44336; /* Slightly darker red */
+    transform: scale(1.05);
+}
+
+.close-menu-button:active {
+    background-color: #d32f2f; /* Even darker red on click */
+    transform: scale(0.95);
+}
+
+/* Dark Mode Styles */
+body.dark-mode .close-menu-button {
+    background-color: #303e58; /* Dark background for dark mode */
+    color: #ddd; /* Lighter text color */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .close-menu-button:hover {
+    background-color: #4f6277; /* Lighter gray for hover */
+}
+
+body.dark-mode .close-menu-button:active {
+    background-color: #283e51; /* Even darker gray on active */
+}
+
+/* About Menu Container */
+.about-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #4b79a1, #283e51);
+    color: #333;
+    width: 89%;
+    height: 100vh;
+    max-width: 600px;
+    padding: 20px;
+    overflow-y: auto;
+	pointer-events: none;
+	opacity: 0;
+	animation: none;
+	transition: .5s;
+}
+
+/* Dark Mode */
+body.dark-mode .about-container {
+    background: #333;
+    color: #ddd;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.about-close-button:hover {
+    background: #d32f2f;
+    transform: scale(1.1);
+}
+
+body.dark-mode .about-close-button {
+    background: #4f6277;
+}
+
+body.dark-mode .about-close-button:hover {
+    background: #283e51;
+}
+
+/* Headers */
+.about-container h1,
+.about-container h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #0e2431;
+}
+
+body.dark-mode .about-container h1,
+body.dark-mode .about-container h2 {
+    color: #fff;
+}
+
+/* Paragraphs */
+.about-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.important-note {
+    color: #f00;
+    font-weight: bold;
+}
+
+/* Links */
+.contact-group a {
+    display: block;
+    text-decoration: none;
+    color: #0e2431;
+    font-weight: bold;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.contact-group a:hover {
+    color: #f8a520;
+}
+
+body.dark-mode .contact-group a {
+    color: #bbb;
+}
+
+body.dark-mode .contact-group a:hover {
+    color: #f8a520;
+}
+
+/* Contact and Links Sections */
+.contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-section,
+.important-links {
+    margin-top: 20px;
+}
+
+.contact-section h2,
+.important-links h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0e2431;
+}
+
+body.dark-mode .contact-section h2,
+body.dark-mode .important-links h2 {
+    color: #fff;
+}
+
+/* Scrollbar for long content */
+.about-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.about-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+body.dark-mode .about-container::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.menu-icon {
+	background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+	width: 86%;
+	cursor: pointer;
+}
+
+#gameTitle {
+	margin: 0;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+#gameGuide {
+	position: fixed;
+    top: -110%;
+    left: 0%;
+    width: 89%;
+    height: 100vh;
+    overflow-y: scroll;
+	transition: 0.5s;
+	z-index: 5;
+	
+}
+
+.cluesButtons {
+	text-align: center;
+    width: 75%;
+    margin: auto;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+	width: 100%;
+    margin-top: 10px;
+}
+
+.btn-close {
+    background-color: #2196f3; /* Red */
+    color: white;
+}
+
+.btn-exit {
+    background-color: #f44336; /* Blue */
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-header p {
+        font-size: 1rem;
+    }
+
+    .menu-buttons button {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+}
+
+@keyframes fading {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

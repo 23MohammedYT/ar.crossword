@@ -1,0 +1,24 @@
+{
+	"grid": [
+        [null, null, null, null, null, null, null, null, null, null],
+		[null, null,  "ح",  "ا",  "ب",  "ن", null, null, null, null],
+		[null, null, null,  "ل", null, null, null, null, null, null],
+		[null, null, null,  "أ", null, null, null, null, null, null],
+		[null,  "غ", null,  "ر", null, null, null, null, null, null],
+		[null,  "ن", null,  "د", null,  "د", null, null, null, null],
+		[ "ل",  "ي",  "و",  "ن",  "ي",  "ل",  "م",  "ي",  "س",  "ي"],
+		[ "ح", null, null, null, null,  "ج", null, null, null, null],
+		[ "ز", null, null, null, null,  "ل", null, null, null, null],
+		[null, null, null, null, null,  "ا", null, null, null, null]
+    ],
+    "across": [
+        { "number": 2, "clue": "صوت الكلب معكوسة", "start": [1, 2], "length": 4 },
+        { "number": 5, "clue": "البرغوث الأرجنتيني", "start": [6, 0], "length": 10 }
+    ],
+    "down": [
+        { "number": 1, "clue": "أين تقع مدينة البتراء؟", "start": [1, 3], "length": 6 },
+        { "number": 3, "clue": "تعني ثري", "start": [4, 1], "length": 3 },
+        { "number": 4, "clue": "أكبر عضو في جسم الإنسان معكوسة", "start": [5, 5], "length": 5 },
+        { "number": 5, "clue": "كوكب مشهور بحلقاته معكوسة", "start": [6, 0], "length": 3 }
+    ]
+}
