@@ -175,30 +175,49 @@ function createId(cell_id, position_x, position_y) {
 
 // Check answers
 function checkAnswers() {
-    const inputs = document.querySelectorAll("#crossword input");
+	var confirmMessage = confirm("بمجرد ضغطك على هذا الزر تنتهي جولتك. هل توافق؟");
+	if (confirmMessage) {
+		const inputs = document.querySelectorAll("#crossword input");
 
-    let correct = true;
+		let correct = true;
 
-    inputs.forEach((input) => {
-        const row = input.dataset.row;
-        const col = input.dataset.col;
+		inputs.forEach((input) => {
+			const row = input.dataset.row;
+			const col = input.dataset.col;
 
-        if (input.value !== crosswordData.grid[row][col]) {
-            input.style.backgroundColor = "#f8d7da";
-            input.style.color = "#444";
-            correct = false;
-        } else {
-            input.style.backgroundColor = "#d4edda";
-            input.style.color = "#444";
-        }
-    });
+			if (input.value !== crosswordData.grid[row][col]) {
+				input.style.backgroundColor = "#f8d7da";
+				input.style.color = "#444";
+				correct = false;
+			} else {
+				input.style.backgroundColor = "#d4edda";
+				input.style.color = "#444";
+			}
+		});
 
-    if (correct) {
-        alert("تهانينا! كل الإجابات صحيحة!");
-    } else {
-        alert("هناك إجابات غير صحيحة، حاول مرة أخرى!");
-    }
+		document.getElementById('confirmOverlay').style.display = 'flex';
+		document.querySelector('.custom-confirm-box').style.display = 'block';
+		if (correct) {
+			document.querySelector('.custom-confirm-box').querySelector('h2').textContent = 'تهانينا';
+			document.querySelector('.custom-confirm-box').querySelector('p').textContent = 'لقد فزت في هذه الجولة، كامل إجاباتك صحيحة!';
+		} else {
+			document.querySelector('.custom-confirm-box').querySelector('h2').textContent = 'للأسف';
+			document.querySelector('.custom-confirm-box').querySelector('p').textContent = 'هناك إجابات غير صحيحة، حاول مرة أخرى!';
+		}
+	}
 }
+
+// Add event listeners for buttons
+document.getElementById('confirmYes').addEventListener('click', () => {
+	loadRandomCrosswordData();
+	document.getElementById('confirmOverlay').style.display = 'none';
+	document.querySelector('.custom-confirm-box').style.display = 'none';
+});
+
+document.getElementById('confirmNo').addEventListener('click', () => {
+	document.getElementById('confirmOverlay').style.display = 'none';
+	document.querySelector('.custom-confirm-box').style.display = 'none';
+});
 
 // getting HTML elements
 const nav = document.querySelector("nav"),
