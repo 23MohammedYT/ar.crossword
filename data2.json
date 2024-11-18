@@ -13,12 +13,12 @@
     ],
     "across": [
         { "number": 1, "clue": "صغير الفيل", "start": [0, 9], "length": 4 },
-        { "number": 2, "clue": "أصغر قارة في العالم", "start": [0, 4], "length": 8 },
-        { "number": 5, "clue": "مضاد نصر معكوسة", "start": [6, 2], "length": 4 }
+        { "number": 3, "clue": "ملك الغابة معكوسة", "start": [1, 3], "length": 5 },
+        { "number": 4, "clue": "أطول نهر في العالم", "start": [3, 2], "length": 8 }
     ],
     "down": [
-        { "number": 3, "clue": "ملك الغابة معكوسة", "start": [1, 3], "length": 5 },
-        { "number": 4, "clue": "أطول نهر في العالم", "start": [3, 2], "length": 8 },
+        { "number": 2, "clue": "أصغر قارة في العالم", "start": [0, 4], "length": 8 },
+        { "number": 5, "clue": "مضاد سعيد معكوسة", "start": [6, 2], "length": 4 },
         { "number": 6, "clue": "النبي الذي التقمه الحوت معكوسة", "start": [6, 1], "length": 4 }
     ]
 }
