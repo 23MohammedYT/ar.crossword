@@ -124,6 +124,7 @@ h1 {
 
 .cell input:focus {
     background-color: #ffffcc;
+	color: #444;
     box-shadow: 0 0 5px #ffd700;
     border-radius: 4px;
 }
@@ -179,7 +180,7 @@ h1 {
 }
 
 /* Button Styling */
-button {
+#check-answers {
     margin-top: 20px;
     padding: 10px 20px;
     background: #4a90e2;
@@ -192,12 +193,12 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
+#check-answers:hover {
     background: #357abd;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
+#check-answers:active {
     transform: scale(0.98);
 }
 
@@ -317,14 +318,301 @@ body.dark-mode .cell input {
     color: #f1f1f1;
 }
 
-body.dark-mode button {
+body.dark-mode #check-answers {
     background-color: #555;
     color: #f1f1f1;
 }
 
-body.dark-mode button:hover {
+body.dark-mode #check-answers:hover {
     background-color: #777;
 }
+
+#black-back {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+	opacity: 25%;
+	cursor: pointer;
+	display: none;
+}
+
+.about-menu {
+	position: fixed;
+	top: 150%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 85%;
+	overflow: auto;
+	max-width: 800px;
+	margin: 50px auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: .5s;
+}
+
+.about-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.closs-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: transparent;
+	color: #fff;
+	font-size: 35px;
+	border: none;
+	cursor: pointer;
+}
+
+.about-menu h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+	color: #0e2431;
+}
+
+.about-menu p {
+	font-size: 1.2rem;
+	line-height: 1.8;
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+.contact-group {
+	text-align: right;
+}
+
+.contact-section {
+	margin-top: 30px;
+}
+
+.contact-section h2 {
+	font-size: 1.8rem;
+	margin-bottom: 15px;
+	color: #0e2431;
+}
+
+.contact-section a {
+	display: block;
+	font-size: 1.1rem;
+	margin: 5px 0;
+	color: #007bff;
+	text-decoration: none;
+}
+
+.contact-section a:hover {
+	text-decoration: underline;
+}
+
+.important-links {
+	margin-top: 30px;
+}
+
+.important-links h2 {
+	font-size: 1.8rem;
+	margin-bottom: 15px;
+	color: #0e2431;
+}
+
+.important-links a {
+	display: block;
+	font-size: 1.1rem;
+	margin: 5px 0;
+	color: #007bff;
+	text-decoration: none;
+}
+
+.important-links a:hover {
+	text-decoration: underline;
+}
+
+body.dark-mode .about-menu {
+	background: #333;
+	color: #ddd;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .about-menu h1 {
+	color: #fff;
+}
+
+body.dark-mode .about-menu p {
+	color: #ddd;
+}
+
+body.dark-mode .contact-section h2 {
+	color: #fff;
+}
+
+body.dark-mode .contact-section a {
+	color: #bb86fc;
+}
+
+body.dark-mode .contact-section a:hover {
+	color: #3700b3;
+}
+
+body.dark-mode .important-links h2 {
+	color: #fff;
+}
+
+.settings-menu {
+	position: fixed;
+	top: 150%;
+	left: 50%;
+	width: 50%;
+	transform: translate(-50%, -50%);
+	margin: 50px auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: 0.5s;
+}
+
+body.dark-mode .settings-menu {
+	background: #333;
+	color: #ddd;
+	box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.settings-menu h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 50px;
+	color: #0e2431;
+}
+
+body.dark-mode .settings-menu h1 {
+	color: #fff;
+}
+
+.setting-item {
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	direction: ltr;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.setting-item label {
+	margin-left: 10px;
+	color: #333;
+	transition: color 0.3s;
+}
+
+body.dark-mode .setting-item label {
+	color: #ddd;
+}
+
+.setting-item .item {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* toggle-pill-color */
+.toggle-pill-color input[type="checkbox"] {
+	display: none;
+}
+
+.toggle-pill-color input[type="checkbox"] + label {
+	display: block;
+	position: relative;
+	width: 3em;
+	height: 1.6em;
+	margin-bottom: 20px;
+	border-radius: 1em;
+	background: #e84d4d;
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-transition: background 0.1s ease-in-out;
+	transition: background 0.1s ease-in-out;
+}
+
+.toggle-pill-color input[type="checkbox"] + label:before {
+	content: "";
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+	border-radius: 1em;
+	background: #fff;
+	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	left: 0.2em;
+	top: 0.2em;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.toggle-pill-color input[type="checkbox"]:checked + label {
+	background: #47cf73;
+}
+
+.toggle-pill-color input[type="checkbox"]:checked + label:before {
+	box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+	left: 1.6em;
+}
+/* toggle-pill-color end */
+
+/* toggle-pill-color */
+body.dark-mode .toggle-pill-color input[type="checkbox"] {
+	display: none;
+}
+
+body.dark-mode .toggle-pill-color input[type="checkbox"] + label {
+	display: block;
+	position: relative;
+	width: 3em;
+	height: 1.6em;
+	margin-bottom: 20px;
+	border-radius: 1em;
+	background: #303e58;
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-transition: background 0.1s ease-in-out;
+	transition: background 0.1s ease-in-out;
+}
+
+body.dark-mode .toggle-pill-color input[type="checkbox"] + label:before {
+	content: "";
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+	border-radius: 1em;
+	background: #e84d4d;
+	position: absolute;
+	left: 0.2em;
+	top: 0.2em;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+body.dark-mode .toggle-pill-color input[type="checkbox"]:checked + label:before {
+	background: #47cf73;
+	box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+	left: 1.6em;
+	-webkit-transform: rotate(295deg);
+	transform: rotate(295deg);
+}
+/* toggle-pill-dark end */
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -348,7 +636,7 @@ body.dark-mode button:hover {
         height: 35px;
     }
 
-    button {
+    #check-answers {
         width: 80%;
     }
 	
@@ -361,8 +649,8 @@ body.dark-mode button:hover {
         max-width: 100%;
     }
 	
-	.clues li {
-		overflow-wrap: break-word;
-		width: 25%;
+	.about-menu, .settings-menu {
+		width: 100vw;
+		height: 100vh;
 	}
 }
