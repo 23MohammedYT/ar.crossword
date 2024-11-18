@@ -1,0 +1,24 @@
+{
+	"grid": [
+        [null, null, null, null,  "أ", null, null, null, null,  "د"],
+		[null, null, null,  "د",  "س",  "أ",  "ل",  "ا", null,  "غ"],
+		[null, null, null, null,  "ت", null, null, null, null,  "ف"],
+		[null, null,  "ن",  "ه",  "ر",  "ا",  "ل",  "ن",  "ي",  "ل"],
+		[null, null, null, null,  "ا", null, null, null, null, null],
+		[null, null, null, null,  "ل", null, null, null, null, null],
+		[null,  "س",  "ن",  "و",  "ي", null, null, null, null, null],
+		[null, null,  "ي", null,  "ا", null, null, null, null, null],
+		[null, null,  "ز", null, null, null, null, null, null, null],
+		[null, null,  "ح", null, null, null, null, null, null, null]
+    ],
+    "across": [
+        { "number": 1, "clue": "صغير الفيل", "start": [0, 9], "length": 4 },
+        { "number": 2, "clue": "أصغر قارة في العالم", "start": [0, 4], "length": 8 },
+        { "number": 5, "clue": "مضاد نصر معكوسة", "start": [6, 2], "length": 4 }
+    ],
+    "down": [
+        { "number": 3, "clue": "ملك الغابة معكوسة", "start": [1, 3], "length": 5 },
+        { "number": 4, "clue": "أطول نهر في العالم", "start": [3, 2], "length": 8 },
+        { "number": 6, "clue": "النبي الذي التقمه الحوت معكوسة", "start": [6, 1], "length": 4 }
+    ]
+}
