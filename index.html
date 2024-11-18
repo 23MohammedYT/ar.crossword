@@ -8,8 +8,27 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 	</head>
 	<body>
+		<nav>
+			<div class="nav-content">
+				<div class="toggle-btn">
+					<i class='bx bx-plus'></i>
+				</div>
+				<span style="--i:1;">
+					<a id="dark-mode-toggle"><i class="material-symbols-outlined">dark_mode</i></a>
+				</span>
+				<span style="--i:2;">
+					<a><i id="settings" class="material-symbols-outlined">settings</i></a>
+				</span>
+				<span style="--i:3;">
+					<a><i id="more" class="material-symbols-outlined">more_vert</i></a>
+				</span>
+			</div>
+		</nav>
+	
 		<h1>لعبة الكلمات المتقاطعة</h1>
 		<div class="main-container">
 			<div class="crossword-container">
@@ -17,10 +36,14 @@
 				<button id="check-answers">تحقق من الإجابات</button>
 			</div>
 			<div class="clues">
-				<h2>الأفقي</h2>
-				<ul id="across-clues"></ul>
-				<h2>الرأسي</h2>
-				<ul id="down-clues"></ul>
+				<div>
+					<h2>الأفقي</h2>
+					<ul id="across-clues"></ul>
+				</div>
+				<div>
+					<h2>الرأسي</h2>
+					<ul id="down-clues"></ul>
+				</div>
 			</div>
 		</div>
 		<script src="script.js"></script>
