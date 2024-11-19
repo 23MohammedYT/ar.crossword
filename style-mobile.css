@@ -112,7 +112,7 @@ body.dark-mode .menu-footer p:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 89vw;
+    width: 100vw;
 	height: 100vh;
 	background: linear-gradient(to bottom, #4b79a1, #283e51);
     padding: 20px;
@@ -268,9 +268,8 @@ body.dark-mode .close-menu-button:active {
     left: 0;
     background: linear-gradient(to bottom, #4b79a1, #283e51);
     color: #333;
-    width: 89%;
+    width: 100vw;
     height: 100vh;
-    max-width: 600px;
     padding: 20px;
     overflow-y: auto;
 	pointer-events: none;
@@ -388,7 +387,7 @@ body.dark-mode .about-container::-webkit-scrollbar-thumb {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
-	width: 86%;
+	width: 100vw;
 	cursor: pointer;
 }
 
@@ -404,7 +403,7 @@ body.dark-mode .about-container::-webkit-scrollbar-thumb {
 	position: fixed;
     top: -110%;
     left: 0%;
-    width: 89%;
+    width: 100vw;
     height: 100vh;
     overflow-y: scroll;
 	transition: 0.5s;
