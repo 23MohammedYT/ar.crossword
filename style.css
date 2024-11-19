@@ -34,6 +34,7 @@
 	"slnt" 0;
 	scrollbar-width: thin; /* Thin scrollbar for Firefox */
     scrollbar-color: #4a90e2 #f0f0f0; /* Thumb and track colors for Firefox */
+	box-sizing: border-box;
 }
 
 body.dark-mode * {
@@ -158,7 +159,6 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: right;
     flex: 1;
-    max-width: 300px;
     align-self: flex-start;
 }
 
